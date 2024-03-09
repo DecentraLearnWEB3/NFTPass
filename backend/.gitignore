@@ -1,0 +1,10 @@
+# Arquivos e pastas gerados pelo npm
+node_modules/
+npm-debug.log
+
+# Arquivos e pastas gerados pelo sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de ambiente
+.env
