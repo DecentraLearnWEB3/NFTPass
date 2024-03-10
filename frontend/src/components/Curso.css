@@ -1,0 +1,29 @@
+/* Curso.css */
+
+.curso {
+    display         : flex;
+    flex-direction  : column;
+    justify-content : center;
+    align-items     : center;
+    border          : 1px solid transparent;
+    background-color: #1e1e1e;
+    padding         : 1em;
+    border-radius   : 5px;
+    margin-bottom   : 1em;
+    cursor          : pointer;
+}
+
+.curso:hover {
+    background-color: #232323;
+    border          : 1px solid #0aff95;
+}
+
+.curso h3 {
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .curso {
+        padding: 15px;
+    }
+}
