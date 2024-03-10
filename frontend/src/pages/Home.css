@@ -1,0 +1,31 @@
+.hero {
+    margin: 2em;
+}
+
+.subhero {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : left;
+    gap            : 1em;
+}
+
+.subhero h1 {
+    font-size  : 40px;
+    font-weight: bold;
+}
+
+.subhero p {
+    line-height: 1.2;
+}
+
+.subhero button {
+    width           : 150px;
+    background-color: #0aff95;
+    color           : black;
+    font-weight     : 900;
+    border-radius   : 4px;
+    border          : none;
+    text-align      : center;
+    padding         : .6em 1em;
+}

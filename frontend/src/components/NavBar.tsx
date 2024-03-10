@@ -27,6 +27,9 @@ function Navbar() {
                 <a href='/' className={`${styles.navLink}`}>Home</a>
               </li>
               <li onClick={removeActive}>
+                <a href='/catalogo' className={`${styles.navLink}`}>Catálogo</a>
+              </li>
+              <li onClick={removeActive}>
                 <a href='dashboard' className={`${styles.navLink}`}>Meus cursos</a>
               </li>
               <li onClick={removeActive}>
