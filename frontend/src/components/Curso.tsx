@@ -15,6 +15,11 @@ const Curso: React.FC<CursoProps> = ({ titulo, descricao, instrutor }) => {
       <h3>{titulo}</h3>
       <p>{descricao}</p>
       <p>Instrutor: {instrutor}</p>
+      <a href="">
+        <button>
+          Acessar
+        </button>
+      </a>
     </div>
   );
 }

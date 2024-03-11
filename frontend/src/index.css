@@ -10,18 +10,20 @@
 }
 
 :root {
-  --header-height  : 3.5rem;
-  --first-color    : hsl(28, 88%, 62%);
-  --title-color    : hsl(0, 0%, 95%);
-  --text-color     : #eefff3;
-  --body-color     : #151617;
-  --body-font      : "Rubik", sans-serif;
-  --second-font    : "Dancing Script", cursive;
-  --h2-font-size   : 1.25rem;
-  --small-font-size: 0.813rem;
-  --font-semi-bold : 600;
-  --z-tooltip      : 10;
-  --z-fixed        : 100;
+  --header-height   : 3.5rem;
+  --first-color     : hsl(28, 88%, 62%);
+  --title-color     : hsl(0, 0%, 95%);
+  --text-color      : #313131;
+  --lime-green-color: #0aff95;
+  --green-color     : #16b66a;
+  --body-color      : #f6f6f6;
+  --body-font       : "Rubik", sans-serif;
+  --second-font     : "Dancing Script", cursive;
+  --h2-font-size    : 1.25rem;
+  --small-font-size : 0.813rem;
+  --font-semi-bold  : 600;
+  --z-tooltip       : 10;
+  --z-fixed         : 100;
 }
 
 body {
