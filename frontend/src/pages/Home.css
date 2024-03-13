@@ -18,13 +18,15 @@
 }
 
 .subhero h1 {
-    font-size  : 44px;
+    font-size  : 60px;
     font-weight: bold;
+    color      : #ffffff;
 }
 
 .subhero p {
     font-size  : 18px;
     line-height: 1.4;
+    color      : #CACAD6;
 }
 
 .subhero button {
@@ -34,10 +36,10 @@
     align-items     : center;
     gap             : 6px;
     width           : fit-content;
-    background-color: #16b66a;
     color           : white;
     font-weight     : 900;
     border-radius   : 4px;
+    background-color: var(--solana-purple);
     border          : none;
     text-align      : center;
     padding         : 1em;
@@ -45,7 +47,7 @@
 }
 
 .subhero button:hover {
-    background: #1e854f;
+    background: linear-gradient(90deg, rgba(153, 69, 255, 1) 0%, rgba(20, 241, 149, 1) 100%);
 }
 
 @media screen and (max-width: 800px) {

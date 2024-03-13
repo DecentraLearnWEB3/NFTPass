@@ -49,16 +49,17 @@ a {
 
 /* connect wallet button */
 .connectWalletButton {
-    padding         : .5em 2em;
-    background-color: var(--green-color);
-    color           : white;
-    border-radius   : 4px;
-    font-weight     : 600;
-    font-size       : 13px;
+    padding      : .5em 2em;
+    background   : linear-gradient(90deg, rgba(153, 69, 255, 1) 0%, rgba(20, 241, 149, 1) 100%);
+    color        : white;
+    border-radius: 4px;
+    font-weight  : 600;
+    font-size    : 13px;
+    cursor       : pointer;
 }
 
 .connectWalletButton:hover {
-    background: #1e854f;
+    background: linear-gradient(-90deg, rgba(153, 69, 255, 1) 0%, rgba(20, 241, 149, 1) 100%);
     color     : white;
 }
 
@@ -70,7 +71,7 @@ a {
 }
 
 .bar {
-    background-color  : #1e854f;
+    background-color  : #dcdcdc;
     width             : 20px;
     height            : 3px;
     display           : block;
@@ -116,14 +117,13 @@ a {
 .navMenu li {
     text-align      : left;
     padding         : 1em;
-    color           : white;
     cursor          : pointer;
     padding         : 0;
-    background-color: var(--green-color);
+    background-color: #171717;
 }
 
 .navMenu li:hover {
-    background-color: #1e854f;
+    background-color: #202020;
 }
 
 .navMenu li a {
@@ -132,9 +132,13 @@ a {
     flex-direction: row;
     align-items   : center;
     gap           : .8em;
-    color         : white;
     font-size     : 15px;
     font-weight   : 500;
+    color         : #CACAD6;
+}
+
+.navMenu li a:hover {
+    color: var(--green-solana);
 }
 
 .navMenu li a svg {
@@ -143,7 +147,7 @@ a {
 }
 
 .logout svg {
-    color    : #353E47;
+    color    : var(--solana-purple);
     transform: scaleX(-1);
 }
 

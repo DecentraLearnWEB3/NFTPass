@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600;700&display=swap");
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 
 * {
@@ -13,11 +11,13 @@
   --header-height   : 3.5rem;
   --first-color     : hsl(28, 88%, 62%);
   --title-color     : hsl(0, 0%, 95%);
-  --text-color      : #313131;
+  --text-color      : #f0f0f0;
   --lime-green-color: #0aff95;
   --green-color     : #16b66a;
-  --body-color      : #f6f6f6;
-  --body-font       : "Rubik", sans-serif;
+  --body-color      : #111111;
+  --solana-purple   : #9945FF;
+  --green-solana    : #14F195;
+  --body-font       : "Ubuntu", sans-serif;
   --second-font     : "Dancing Script", cursive;
   --h2-font-size    : 1.25rem;
   --small-font-size : 0.813rem;
