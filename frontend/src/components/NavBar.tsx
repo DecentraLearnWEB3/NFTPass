@@ -38,36 +38,85 @@ function Navbar() {
       <div className="App">
         <header className="App-header">
           <nav className={`${styles.navbar}`}>
-            {/* logo */}
-            <a href='/' className={`${styles.logo}`}>
-                <img src={BrainLogo} alt="" />Web3Educ
-            </a>
-
-            <ul className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
-              <li onClick={removeActive}>
-                <a href='/' className={`${styles.navLink}`}>Home</a>
-              </li>
-              <li onClick={removeActive}>
-                <a href='/catalogo' className={`${styles.navLink}`}>Catálogo</a>
-              </li>
-              <li onClick={removeActive}>
-                <a href='/afiliados' className={`${styles.navLink}`}>Afiliados</a>
-              </li>
-              <li onClick={removeActive}>
-                <a href='dashboard' className={`${styles.navLink}`}>Meus cursos</a>
-              </li>
-              <li onClick={removeActive}>
-                <a onClick={handleConnectToMetaMask} className={`${styles.connectWalletButton}`}>
-                {walletAddress ? maskAddress(walletAddress) : 'Connect'}
-                </a>
-              </li>
-              
-            </ul>
-            <div className={`${styles.hamburger} ${isActive ? styles.active : ''}`}  onClick={toggleActiveClass}>
+            
+          <div className={`${styles.hamburger} ${isActive ? styles.active : ''}`}  onClick={toggleActiveClass}>
               <span className={`${styles.bar}`}></span>
               <span className={`${styles.bar}`}></span>
               <span className={`${styles.bar}`}></span>
             </div>
+
+            <div className={`${styles.logoContainer}`}>
+              <a href='/'>
+                <img src={BrainLogo} alt="" />Web3Educ
+              </a>
+            </div>
+
+            <div className={`${styles.connectWalletButton}`} onClick={handleConnectToMetaMask}>
+                        {walletAddress ? maskAddress(walletAddress) : 'Connect'}
+                    </div>
+
+            <ul className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
+              <li onClick={removeActive}>
+                <a href='/' className={`${styles.navLink}`}>
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"/></svg>
+                  Home</a>
+              </li>
+              
+              <li onClick={removeActive}>
+                <a href='/catalogo' className={`${styles.navLink}`}>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 8h10M9 12h10M9 16h10M4.99 8H5m-.02 4h.01m0 4H5"/>
+                </svg>
+                Catálogo</a>
+              </li>
+              
+              <li onClick={removeActive}>
+                <a href='dashboard' className={`${styles.navLink}`}>
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.143 4H4.857A.857.857 0 0 0 4 4.857v4.286c0 .473.384.857.857.857h4.286A.857.857 0 0 0 10 9.143V4.857A.857.857 0 0 0 9.143 4Zm10 0h-4.286a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286A.857.857 0 0 0 20 9.143V4.857A.857.857 0 0 0 19.143 4Zm-10 10H4.857a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286a.857.857 0 0 0 .857-.857v-4.286A.857.857 0 0 0 9.143 14Zm10 0h-4.286a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286a.857.857 0 0 0 .857-.857v-4.286a.857.857 0 0 0-.857-.857Z"/>
+                </svg>
+                Meus cursos</a>
+              </li>
+              <li onClick={removeActive}>
+                <a href='/' className={`${styles.navLink}`}>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8.032 12 1.984 1.984 4.96-4.96m4.55 5.272.893-.893a1.984 1.984 0 0 0 0-2.806l-.893-.893a1.984 1.984 0 0 1-.581-1.403V7.04a1.984 1.984 0 0 0-1.984-1.984h-1.262a1.983 1.983 0 0 1-1.403-.581l-.893-.893a1.984 1.984 0 0 0-2.806 0l-.893.893a1.984 1.984 0 0 1-1.403.581H7.04A1.984 1.984 0 0 0 5.055 7.04v1.262c0 .527-.209 1.031-.581 1.403l-.893.893a1.984 1.984 0 0 0 0 2.806l.893.893c.372.372.581.876.581 1.403v1.262a1.984 1.984 0 0 0 1.984 1.984h1.262c.527 0 1.031.209 1.403.581l.893.893a1.984 1.984 0 0 0 2.806 0l.893-.893a1.985 1.985 0 0 1 1.403-.581h1.262a1.984 1.984 0 0 0 1.984-1.984V15.7c0-.527.209-1.031.581-1.403Z"/>
+              </svg>
+                Certificados</a>
+              </li>
+              <li onClick={removeActive}>
+                <a href='/' className={`${styles.navLink}`}>
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15v4m6-6v6m6-4v4m6-6v6M3 11l6-5 6 5 5.5-5.5"/>
+                  </svg>
+                  Analytics</a>
+              </li>
+              <li onClick={removeActive}>
+                <a href='/afiliados' className={`${styles.navLink}`}>
+                <svg  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M4.5 17H4a1 1 0 0 1-1-1 3 3 0 0 1 3-3h1m0-3.05A2.5 2.5 0 1 1 9 5.5M19.5 17h.5a1 1 0 0 0 1-1 3 3 0 0 0-3-3h-1m0-3.05a2.5 2.5 0 1 0-2-4.45m.5 13.5h-7a1 1 0 0 1-1-1 3 3 0 0 1 3-3h3a3 3 0 0 1 3 3 1 1 0 0 1-1 1Zm-1-9.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"/>
+              </svg>
+                  Afiliados</a>
+              </li>
+              <li onClick={removeActive}>
+                <a href='/' className={`${styles.navLink}`}>
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13v-2a1 1 0 0 0-1-1h-.757l-.707-1.707.535-.536a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0l-.536.535L14 4.757V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v.757l-1.707.707-.536-.535a1 1 0 0 0-1.414 0L4.929 6.343a1 1 0 0 0 0 1.414l.536.536L4.757 10H4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h.757l.707 1.707-.535.536a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l.536-.535 1.707.707V20a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.757l1.707-.708.536.536a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-.535-.536.707-1.707H20a1 1 0 0 0 1-1Z"/>
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                </svg>
+                  Configurações</a>
+              </li>
+              <li onClick={removeActive}>
+                <a href='/' className={`${styles.navLink, styles.logout}`}>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2"/>
+              </svg>
+                Sair
+              </a>
+              </li>
+              
+            </ul>
           </nav>
         </header>
       </div>

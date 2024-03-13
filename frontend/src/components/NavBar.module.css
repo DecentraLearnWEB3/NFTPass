@@ -4,17 +4,12 @@
     box-sizing: border-box;
 }
 
-ul {
-    list-style: none;
-}
 
 a {
     text-decoration: none;
     color          : var(--text-color);
     font-size      : 14px;
 }
-
-
 
 /* navbar */
 .navbar {
@@ -30,10 +25,15 @@ a {
     box-shadow        : 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
+.logoContainer {
+    display        : flex;
+    flex-direction : row;
+    justify-content: center;
+    align-items    : center;
+    flex-grow      : 1;
+}
 
-/* logo  */
-
-.logo {
+.logoContainer a {
     display        : flex;
     flex-direction : row;
     justify-content: center;
@@ -42,28 +42,10 @@ a {
     font-weight    : 600;
 }
 
-.logo img {
-    display        : flex;
-    flex-direction : column;
-    align-items    : center;
-    justify-content: center;
-    align-self     : center;
-    max-width      : 50px;
+.logoContainer a img {
+    max-width: 50px;
 }
 
-
-/* ul  */
-.navMenu {
-    margin-left    : auto;
-    display        : flex;
-    justify-content: space-between;
-    align-items    : center;
-    gap            : 40px;
-}
-
-.navMenu a:hover {
-    border-bottom: 1px solid #08ce78;
-}
 
 /* connect wallet button */
 .connectWalletButton {
@@ -80,64 +62,93 @@ a {
     color     : white;
 }
 
-/* media queries */
+/* hamburger */
+.hamburger {
+    display    : block;
+    cursor     : pointer;
+    margin-left: auto;
+}
 
-@media screen and (max-width: 780px) {
+.bar {
+    background-color  : #1e854f;
+    width             : 20px;
+    height            : 3px;
+    display           : block;
+    margin            : 5px;
+    -webkit-transition: 0.1s ease-in-out;
+    transition        : 0.1s ease-in-out;
+}
 
-    /* hamburger */
-    .hamburger {
-        display    : block;
-        cursor     : pointer;
-        margin-left: auto;
-    }
+/* adding active class to the bars  */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
 
-    .bar {
-        background-color  : #858585;
-        width             : 20px;
-        height            : 3px;
-        display           : block;
-        margin            : 5px;
-        -webkit-transition: 0.3s ease-in-out;
-        transition        : 0.3s ease-in-out;
-    }
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
 
-    /* adding active class to the bars  */
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
 
 
-    /* navMenu */
+/* navMenu */
+.navMenu {
+    display           : flex;
+    align-items       : left;
+    position          : absolute;
+    flex-direction    : column;
+    top               : 70px;
+    left              : -100%;
+    text-align        : left;
+    width             : 30%;
+    transition        : .2s linear;
+    -webkit-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow   : 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+    box-shadow        : 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+}
 
+.navMenu.active {
+    left: 0;
+}
+
+.navMenu li {
+    text-align      : left;
+    padding         : 1em;
+    color           : white;
+    cursor          : pointer;
+    padding         : 0;
+    background-color: var(--green-color);
+}
+
+.navMenu li:hover {
+    background-color: #1e854f;
+}
+
+.navMenu li a {
+    padding       : 1em 1em 1em 1.2em;
+    display       : flex;
+    flex-direction: row;
+    align-items   : center;
+    gap           : .8em;
+    color         : white;
+    font-size     : 15px;
+    font-weight   : 500;
+}
+
+.navMenu li a svg {
+    display   : block;
+    align-self: center;
+}
+
+.logout svg {
+    color    : #353E47;
+    transform: scaleX(-1);
+}
+
+@media screen and (max-width: 800px) {
     .navMenu {
-        position          : absolute;
-        flex-direction    : column;
-        gap               : 0;
-        top               : 70px;
-        left              : -100%;
-        text-align        : start;
-        width             : 100%;
-        transition        : 0.7s ease-in-out;
-        background-color  : var(--body-color);
-        padding           : 1em;
-        -webkit-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
-        -moz-box-shadow   : 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
-        box-shadow        : 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
-    }
-
-    .navMenu.active {
-        left: 0;
-    }
-
-    .navMenu li {
-        margin: 16px 0;
+        width: 100%;
     }
 }

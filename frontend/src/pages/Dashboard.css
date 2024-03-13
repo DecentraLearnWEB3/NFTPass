@@ -1,8 +1,7 @@
 .dashboard {
-    padding         : 20px;
-    background-color: var(--green-color);
-    height          : fit-content;
-    padding-bottom  : 10em;
+    padding       : 20px;
+    height        : fit-content;
+    padding-bottom: 10em;
 }
 
 h2 {

@@ -39,3 +39,10 @@ ul {
 a {
   text-decoration: none;
 }
+
+.main-content {
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+}
