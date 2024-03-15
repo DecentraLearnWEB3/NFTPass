@@ -1,83 +1,68 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Curso from '../components/Curso';
 import "./Dashboard.css";
+import { Alchemy, Network } from "alchemy-sdk";
+import MetaMaskService from '../services/MetaMaskService';
 
 const Dashboard: React.FC = () => {
-  // Simulando uma lista de cursos
-  const cursos = [
-    { 
-      id: 1,
-      titulo: 'Curso de React',
-      descricao: 'Aprenda React.js',
-      instrutor: 'John Doe'
-    },
-    { 
-      id: 2,
-      titulo: 'Curso de JavaScript',
-      descricao: 'Aprenda JavaScript',
-      instrutor: 'Jane Doe'
-    },
-    { 
-      id: 3,
-      titulo: 'Curso de TypeScript',
-      descricao: 'Aprenda TypeScript',
-      instrutor: 'Doe Doe'
-    },
-    { 
-      id: 4,
-      titulo: 'Curso de HTML',
-      descricao: 'Aprenda HTML',
-      instrutor: 'Eduardo Silva'
-    },
-    { 
-      id: 5,
-      titulo: 'Curso de CSS',
-      descricao: 'Aprenda CSS',
-      instrutor: 'Maria Souza'
-    },
-    { 
-      id: 6,
-      titulo: 'Curso de Python',
-      descricao: 'Aprenda Python',
-      instrutor: 'Pedro Santos'
-    },
-    { 
-      id: 7,
-      titulo: 'Curso de Node.js',
-      descricao: 'Aprenda Node.js',
-      instrutor: 'Ana Oliveira'
-    },
-    { 
-      id: 8,
-      titulo: 'Curso de Angular',
-      descricao: 'Aprenda Angular',
-      instrutor: 'Roberto Lima'
-    },
-    { 
-      id: 9,
-      titulo: 'Curso de Vue.js',
-      descricao: 'Aprenda Vue.js',
-      instrutor: 'Juliana Silva'
-    },
-    { 
-      id: 10,
-      titulo: 'Curso de Java',
-      descricao: 'Aprenda Java',
-      instrutor: 'Carlos Ferreira'
-    }
-  ];
+
+  const [nfts, setNfts] = useState<any[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    
+    const fetchNFTs = async () => {
+      try {
+        const alchemy = new Alchemy({
+          apiKey: "ARbgMAZSfIQRR9iNa5bnE1tBoyNk74se",
+          network: Network.ETH_MAINNET,
+        });
+
+        const address: string | null = await MetaMaskService.connectToMetaMask();
+          
+          const nftsData = await alchemy.nft.getNftsForOwner(address);
+          setNfts(nftsData.ownedNfts);
+
+          for (const nft of nftsData.ownedNfts) {
+            console.log("===");
+            console.log("contract address:", nft.contract.address);
+            console.log("token ID:", nft.tokenId);
+          }
+
+          console.log("===");
+
+          // Fetch metadata for a particular NFT:
+            console.log("fetching metadata for a Crypto Coven NFT...");
+            const response = await alchemy.nft.getNftMetadata(
+              "0x25ed58c027921E14D86380eA2646E3a1B5C55A8b",
+              "5832"
+            );
+
+            console.log(response);
+
+        setLoading(false);
+      } catch (error) {
+        console.error("Erro ao buscar NFTs:", error);
+      }
+    };
+
+    fetchNFTs();
+    
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="dashboard">
-      <h2>Meus Cursos</h2>
-      <div className="curso-list">
-        {cursos.map(curso => (
-          <Curso
-            key={curso.id}
-            titulo={curso.titulo}
-            descricao={curso.descricao}
-            instrutor={curso.instrutor}
-          />
+      <h2>Meus NFTs</h2>
+      <div className="nft-list">
+        {nfts.map((nft, index) => (
+          <div key={index} className="nft">
+            <h3>{nft.title}</h3>
+            <p>{nft.description}</p>
+          </div>
         ))}
       </div>
     </div>

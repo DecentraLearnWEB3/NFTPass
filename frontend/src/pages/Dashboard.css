@@ -17,6 +17,20 @@ h2 {
     gap                  : 20px;
 }
 
+.nft-list {}
+
+.nft {
+    margin        : 1em;
+    border        : 1px solid white;
+    display       : flex;
+    flex-direction: column;
+    padding       : 1em;
+}
+
+.nft h3 {
+    font-size: 17px;
+}
+
 @media screen and (max-width: 768px) {
     .curso-list {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
