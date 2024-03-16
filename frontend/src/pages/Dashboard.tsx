@@ -21,6 +21,7 @@ const Dashboard: React.FC = () => {
         const address: string | null = await MetaMaskService.connectToMetaMask();
           
           const nftsData = await alchemy.nft.getNftsForOwner(address);
+          
           setNfts(nftsData.ownedNfts);
 
           for (const nft of nftsData.ownedNfts) {
