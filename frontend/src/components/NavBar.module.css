@@ -11,6 +11,20 @@ a {
     font-size      : 14px;
 }
 
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 /* navbar */
 .navbar {
     background-color  : var(--body-color);
@@ -49,17 +63,19 @@ a {
 
 /* connect wallet button */
 .connectWalletButton {
-    padding      : .5em 2em;
-    background   : linear-gradient(90deg, rgba(153, 69, 255, 1) 0%, rgba(20, 241, 149, 1) 100%);
-    color        : white;
-    border-radius: 4px;
-    font-weight  : 600;
-    font-size    : 13px;
-    cursor       : pointer;
+    padding        : .5em 2em;
+    background     : linear-gradient(109deg, #9945ff, #14f195);
+    background-size: 120% 120%;
+    animation      : gradient-animation 2s ease infinite;
+    color          : white;
+    border-radius  : 4px;
+    font-weight    : 600;
+    font-size      : 13px;
+    cursor         : pointer;
 }
 
 .connectWalletButton:hover {
-    background: linear-gradient(-90deg, rgba(153, 69, 255, 1) 0%, rgba(20, 241, 149, 1) 100%);
+    background: #14f195;
     color     : white;
 }
 

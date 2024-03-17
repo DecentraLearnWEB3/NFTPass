@@ -1,0 +1,12 @@
+.catalog {
+    width    : 100%;
+    max-width: 800px;
+    margin   : 0 auto;
+    padding  : 20px;
+}
+
+.events-list {
+    display              : grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap                  : 20px;
+}

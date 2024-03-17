@@ -1,0 +1,118 @@
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.event {
+    background-color: #1c1c1c;
+    padding         : 2em;
+    border-radius   : 5px;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : space-around;
+    gap             : 1em;
+    border-radius   : 10px;
+    border          : 1px solid #2c2c2c;
+    transition      : .2s;
+}
+
+.event:hover {
+    border: 1px solid;
+    border: 1px solid #6d6d6d;
+}
+
+.event h3 {
+    margin-top : 0;
+    font-size  : 20px;
+    font-weight: 500;
+}
+
+.event .author {
+    display         : flex;
+    flex-direction  : row;
+    align-items     : center;
+    color           : black;
+    border-radius   : 4px;
+    padding         : .4em .8em;
+    font-weight     : 500;
+    width           : fit-content;
+    background-color: var(--green-solana);
+}
+
+.event .dataHora {
+    display         : flex;
+    flex-direction  : row;
+    justify-content : center;
+    align-items     : center;
+    gap             : .2em;
+    color           : black;
+    border-radius   : 4px;
+    padding         : .4em .8em;
+    font-weight     : 500;
+    width           : fit-content;
+    background-color: var(--green-solana);
+}
+
+.event div {
+    display       : flex;
+    flex-direction: row;
+    gap           : 1em;
+}
+
+.event .local {
+    display       : flex;
+    flex-direction: row;
+    align-items   : center;
+    color         : #c4c4c4;
+    font-weight   : 500;
+}
+
+.event .local svg {
+    color: var(--green-solana);
+}
+
+.event .description {
+    color: #c4c4c4;
+}
+
+.event .instructions {
+    color: #c4c4c4;
+}
+
+.event button {
+    text-transform  : uppercase;
+    margin-top      : 1em;
+    cursor          : pointer;
+    padding         : 1em 2em;
+    width           : 200px;
+    align-self      : center;
+    font-weight     : 600;
+    border-radius   : 5px;
+    border          : none;
+    color           : white;
+    background-color: var(--solana-purple);
+}
+
+.event button:hover {
+    background-color: #892be2b7;
+}
+
+/* Estilos para telas menores */
+@media screen and (max-width: 600px) {
+    .events-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .event button {
+        width: 200px;
+    }
+}
