@@ -1,0 +1,131 @@
+.eventContainer {
+    width          : 400px;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    max-width      : 600px;
+    margin         : 0 auto;
+    padding        : 20px;
+    border         : 1px solid #363636;
+    border-radius  : 5px;
+
+}
+
+.eventContainer h2 {
+    font-size    : 26px;
+    color        : var(--green-solana);
+    border-radius: 5px;
+    width        : fit-content;
+    margin       : .5em 0em 1em 0em;
+}
+
+label {
+    display      : block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width           : 100%;
+    padding         : 10px;
+    margin-bottom   : 10px;
+    background-color: #202020;
+    border          : 1px solid #3c3c3c;
+    color           : #bbbbbb;
+    border-radius   : 5px;
+    box-sizing      : border-box;
+    outline         : 0;
+}
+
+input:focus {
+    border: 1px solid #676767;
+}
+
+textarea:focus {
+    border: 1px solid #676767;
+}
+
+#nome {
+    font-size: 20px;
+}
+
+#descricao {
+    font-size: 16px;
+}
+
+.InicioContainer,
+.FimContainer {
+    z-index        : 9998;
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-evenly;
+    align-items    : center;
+    gap            : .4em;
+    color          : #757575;
+    margin         : 1em;
+}
+
+#data {
+    padding         : .5em;
+    border-radius   : 5px;
+    background-color: #363636;
+    border          : 1px solid #676767;
+    color           : #bbbbbb;
+}
+
+#data:focus {
+    border: 1px solid #3c3c3c;
+}
+
+#hora {
+    display: flex;
+    margin : .2em 0em;
+    width  : fit-content;
+    border : 1px solid #676767;
+}
+
+.customSelect {
+    border-radius: 5px;
+}
+
+input[type='file'] {
+    display: none
+}
+
+.customImgUpload {
+    background-color: var(--green-solana);
+    color           : #363636;
+    font-weight     : 600;
+    padding         : .4em 1em;
+    width           : fit-content;
+    border-radius   : 5px;
+    cursor          : pointer;
+    margin-bottom   : 1em;
+}
+
+.customImgUpload:hover {
+    background-color: var(--green-color);
+}
+
+button {
+    background-color: var(--solana-purple);
+    color           : #fff;
+    padding         : 10px 20px;
+    border          : none;
+    border-radius   : 5px;
+    font-size       : 16px;
+    font-weight     : 600;
+    cursor          : pointer;
+}
+
+button:hover {
+    background-color: #892be2b9;
+}
+
+/* Estilos para tornar o formulário responsivo */
+@media screen and (max-width: 768px) {
+    form {
+        padding: 10px;
+    }
+}

@@ -13,16 +13,15 @@
 }
 
 .event {
-    background-color: #1c1c1c;
-    padding         : 2em;
+    background-color: #171717;
     border-radius   : 5px;
     display         : flex;
-    flex-direction  : column;
-    justify-content : space-around;
-    gap             : 1em;
+    flex-direction  : row;
+    align-items     : flex-start;
     border-radius   : 10px;
     border          : 1px solid #2c2c2c;
     transition      : .2s;
+    width           : 100%;
 }
 
 .event:hover {
@@ -30,8 +29,40 @@
     border: 1px solid #6d6d6d;
 }
 
+.eventSubContainer {
+    flex           : 1;
+    padding        : 2em 2em 2em 0;
+    display        : flex;
+    flex-direction : column;
+    gap            : .6em;
+    justify-content: space-around;
+}
+
+.imgPriceContainer {
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: center;
+}
+
+.event img {
+    width        : 200px;
+    height       : auto;
+    border-radius: 10px;
+    margin       : 2em;
+}
+
+.event .preco {
+    text-align   : center;
+    border       : 1px solid #6d6d6d;
+    color        : #b0b0b0;
+    border-radius: 10px;
+    padding      : .5em;
+    width        : fit-content;
+    font-size    : 30px;
+}
+
 .event h3 {
-    margin-top : 0;
     font-size  : 20px;
     font-weight: 500;
 }
@@ -62,7 +93,7 @@
     background-color: var(--green-solana);
 }
 
-.event div {
+.event .authorDataHoraContainer {
     display       : flex;
     flex-direction: row;
     gap           : 1em;
@@ -94,12 +125,13 @@
     cursor          : pointer;
     padding         : 1em 2em;
     width           : 200px;
-    align-self      : center;
+    align-self      : left;
     font-weight     : 600;
     border-radius   : 5px;
     border          : none;
     color           : white;
     background-color: var(--solana-purple);
+    font-weight     : 600;
 }
 
 .event button:hover {
@@ -109,10 +141,34 @@
 /* Estilos para telas menores */
 @media screen and (max-width: 600px) {
     .events-list {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .event {
+        flex-direction: column;
+        align-items   : center;
+    }
+
+    .eventSubContainer {
+        padding        : 1.5em;
+        justify-content: center;
+    }
+
+    .event h3 {
+        text-align: center;
+    }
+
+    .event img {
+        margin: 2em 0 0 0;
+    }
+
+    .event .authorDataHoraContainer {
+        flex-direction: column;
+        font-size     : 14px;
     }
 
     .event button {
-        width: 200px;
+        width     : 200px;
+        align-self: center;
     }
 }

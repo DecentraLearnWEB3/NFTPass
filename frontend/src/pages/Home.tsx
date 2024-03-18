@@ -9,8 +9,8 @@ function Home() {
     <div>
       <section className='hero'>
         <div className='subhero'>
-          <h1>Educação em qualquer lugar.</h1>
-          <p>Acesse seus materiais com liberdade, conectando-se a diferentes plataformas através do nosso protocolo exclusivo.</p>
+          <h1>Educação com liberdade.</h1>
+          <p>Explore uma abordagem revolucionária para o aprendizado, onde a blockchain oferece liberdade total e personalizada na sua educação.</p>
           <button>
             <svg stroke="currentColor" fill="currentColor"  viewBox="0 0 16 16" focusable="false"  height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"></path>
             </svg>
@@ -21,6 +21,18 @@ function Home() {
           <img src={heroImage} alt="" />
         </div>
       </section>
+
+      <section className='feature'>
+        <div className='feature-content'>
+          <h2>Recursos Incríveis</h2>
+          <p>Descubra recursos incríveis que ajudarão você a maximizar seu aprendizado.</p>
+          <button>Descobrir mais</button>
+        </div>
+        <div className='feature-image'>
+          <img src="" alt="" />
+        </div>
+      </section>
+
     </div>
   )
 }

@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Catalog from './pages/Catalog';
 import Footer from './components/Footer';
+import CreateEvent from './pages/CreateEvent';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
          <Route path="/" element={<Home />} />
          <Route path="/dashboard" element={<Dashboard />} />
          <Route path="/catalog" element={<Catalog />} />
+         <Route path="/create" element={<CreateEvent />} />
        </Routes>
        
      </main>

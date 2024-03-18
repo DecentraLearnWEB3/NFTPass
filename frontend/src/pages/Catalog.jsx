@@ -11,7 +11,8 @@ const events = [
       hora: '09:00',
       instrucoes: 'Traga seu próprio laptop e instale o ambiente de desenvolvimento Ethereum antes do bootcamp.',
       autor: 'Ada Lovelace',
-      local: 'Online'
+      local: 'Online',
+      preco: '10'
     },
     {
       nome: 'Hackathon de Finanças Descentralizadas (DeFi)',
@@ -20,7 +21,8 @@ const events = [
       hora: '13:30',
       instrucoes: 'Equipes de até 4 pessoas. Inscrições individuais também são bem-vindas.',
       autor: 'Alan Turing',
-      local: 'Centro de Convenções da Cidade'
+      local: 'Centro de Convenções da Cidade',
+      preco: '20'
     },
     {
       nome: 'Webinar: Introdução ao Metaverso',
@@ -29,7 +31,8 @@ const events = [
       hora: '11:00',
       instrucoes: 'O webinar será transmitido ao vivo no YouTube. Inscreva-se com antecedência para receber o link de acesso.',
       autor: 'Grace Hopper',
-      local: 'Online'
+      local: 'Online',
+      preco: '17'
     },
     {
       nome: 'Workshop: Construindo Aplicações Descentralizadas (DApps) com React e Solidity',
@@ -38,7 +41,8 @@ const events = [
       hora: '16:00',
       instrucoes: 'Conhecimento básico de React é recomendado. Traga seu laptop com Node.js e truffle instalados.',
       autor: 'Linus Torvalds',
-      local: 'Universidade Técnica Local'
+      local: 'Universidade Técnica Local',
+      preco: '12'
     },
     {
       nome: 'Meetup de NFTs: Explorando o Mundo dos Tokens Não Fungíveis',
@@ -47,7 +51,8 @@ const events = [
       hora: '18:30',
       instrucoes: 'O evento será realizado em um espaço de coworking. Confirme sua presença com antecedência.',
       autor: 'Margaret Hamilton',
-      local: 'Coworking Space X'
+      local: 'Coworking Space X',
+      preco: '22'
     },
     {
       nome: 'Hackathon de Blockchain para Soluções Ambientais',
@@ -56,7 +61,8 @@ const events = [
       hora: '14:00',
       instrucoes: 'Aberto para desenvolvedores, designers e entusiastas da sustentabilidade.',
       autor: 'John McCarthy',
-      local: 'Parque Ambiental da Cidade'
+      local: 'Parque Ambiental da Cidade',
+      preco: '42'
     },
     {
       nome: 'Curso Avançado de Contratos Inteligentes',
@@ -65,7 +71,8 @@ const events = [
       hora: '10:00',
       instrucoes: 'Requisitos: conhecimento básico de Solidity e experiência em desenvolvimento de DApps.',
       autor: 'Guido van Rossum',
-      local: 'Faculdade de Tecnologia Y'
+      local: 'Faculdade de Tecnologia Y',
+      preco: '16'
     },
     {
       nome: 'Webinar: O Futuro da Web Descentralizada (Web3)',
@@ -74,7 +81,8 @@ const events = [
       hora: '19:00',
       instrucoes: 'Aberto para todos. Inscreva-se para garantir sua vaga.',
       autor: 'Yukihiro Matsumoto',
-      local: 'Online'
+      local: 'Online',
+      preco: '10'
     },
     {
       nome: 'Meetup de Desenvolvedores Ethereum',
@@ -83,7 +91,8 @@ const events = [
       hora: '17:30',
       instrucoes: 'O meetup será realizado em um café. Venha preparado para discutir suas experiências e desafios.',
       autor: 'Bjarne Stroustrup',
-      local: 'Café da Esquina'
+      local: 'Café da Esquina',
+      preco: '25'
     },
     {
       nome: 'Bootcamp de Desenvolvimento de DApps em Polkadot',
@@ -92,7 +101,8 @@ const events = [
       hora: '10:00',
       instrucoes: 'Requisitos: conhecimento básico de JavaScript e familiaridade com conceitos de blockchain.',
       autor: 'Anders Hejlsberg',
-      local: 'Centro de Convenções Polkadot'
+      local: 'Centro de Convenções Polkadot',
+      preco: '33'
     }
   ];
   
