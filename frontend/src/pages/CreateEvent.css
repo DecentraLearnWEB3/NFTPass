@@ -1,4 +1,5 @@
 .eventContainer {
+
     width          : 400px;
     display        : flex;
     flex-direction : column;
@@ -17,7 +18,7 @@
     color        : var(--green-solana);
     border-radius: 5px;
     width        : fit-content;
-    margin       : .5em 0em 1em 0em;
+    margin       : .2em 0em .5em 0em;
 }
 
 label {
@@ -36,6 +37,8 @@ textarea {
     border-radius   : 5px;
     box-sizing      : border-box;
     outline         : 0;
+    font-family     : var(--body-font);
+    font-size       : 16px;
 }
 
 input:focus {
@@ -44,14 +47,6 @@ input:focus {
 
 textarea:focus {
     border: 1px solid #676767;
-}
-
-#nome {
-    font-size: 20px;
-}
-
-#descricao {
-    font-size: 16px;
 }
 
 .InicioContainer,
@@ -63,15 +58,18 @@ textarea:focus {
     align-items    : center;
     gap            : .4em;
     color          : #757575;
-    margin         : 1em;
+    margin-bottom  : .4em;
 }
 
 #data {
     padding         : .5em;
     border-radius   : 5px;
-    background-color: #363636;
+    background-color: #202020;
     border          : 1px solid #676767;
-    color           : #bbbbbb;
+    color           : #757575;
+    font-family     : var(--body-font);
+    font-size       : 16px;
+    font-weight     : 500;
 }
 
 #data:focus {
@@ -85,23 +83,27 @@ textarea:focus {
     border : 1px solid #676767;
 }
 
+#tipo {
+    width: 200px;
+}
+
 .customSelect {
     border-radius: 5px;
 }
 
 input[type='file'] {
-    display: none
+    display: none;
 }
 
 .customImgUpload {
     background-color: var(--green-solana);
     color           : #363636;
     font-weight     : 600;
-    padding         : .4em 1em;
-    width           : fit-content;
+    padding         : 10px 20px;
+    width           : 200px;
     border-radius   : 5px;
     cursor          : pointer;
-    margin-bottom   : 1em;
+    margin          : 1em 0 1em 0;
 }
 
 .customImgUpload:hover {
@@ -117,6 +119,7 @@ button {
     font-size       : 16px;
     font-weight     : 600;
     cursor          : pointer;
+    width           : 200px;
 }
 
 button:hover {

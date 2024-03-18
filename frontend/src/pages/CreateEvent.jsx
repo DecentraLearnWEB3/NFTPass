@@ -15,6 +15,8 @@ function CreateEvent() {
     local: '',
     imagem: null,
     preco: '',
+    link: '',
+    tipo: '',
   });
 
   const handleChange = (e) => {
@@ -40,6 +42,8 @@ function CreateEvent() {
       instrucoes: '',
       imagem: null,
       preco: '',
+      link: '',
+      tipo: '',
     });
   };
 
@@ -53,6 +57,13 @@ function CreateEvent() {
     setEvento(prevEvento => ({
       ...prevEvento,
       horaFim: selectedOption.value
+    }));
+  };
+
+  const handleChangeTipo = (selectedOption) => {
+    setEvento(prevEvento => ({
+      ...prevEvento,
+      tipo: selectedOption.value
     }));
   };
 
@@ -227,6 +238,23 @@ function CreateEvent() {
         <textarea id="instrucoes" placeholder='Instruções' name="instrucoes" value={evento.instrucoes} onChange={handleChange}></textarea>
 
         <input type="text" placeholder='Preço' id='preco' name='preco' value={evento.preco} onChange={handleChange} />
+
+        <input type="text" placeholder='Link' id='link' name='link' value={evento.link} onChange={handleChange} />
+
+        <Select
+          className="customSelect"
+          id="tipo"
+          name="tipo"
+          value={evento.tipo ? { value: evento.tipo, label: evento.tipo } : null}
+          onChange={handleChangeTipo}
+          options={[
+            { value: 'NORMAL', label: 'NORMAL' },
+            { value: 'MASTER', label: 'MASTER' },
+            { value: 'VIP', label: 'VIP' }
+          ]}
+          placeholder="Selecione o tipo"
+          styles={customStyles}
+        />
 
         <label  className='customImgUpload' htmlFor="imagem">Imagem &#187;<input type="file" placeholder='Imagem' id="imagem" name="imagem" accept="image/*" onChange={handleChange} /></label>
         
