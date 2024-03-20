@@ -34,7 +34,7 @@
     padding        : 2em 2em 2em 0;
     display        : flex;
     flex-direction : column;
-    gap            : .6em;
+    gap            : .4em;
     justify-content: space-around;
 }
 
@@ -54,74 +54,84 @@
 
 .event .preco {
     text-align   : center;
-    border       : 1px solid #6d6d6d;
-    color        : #b0b0b0;
+    color        : #c4c4c4;
     border-radius: 10px;
-    padding      : .5em;
+    border       : 2px solid #2c2c2c;
+    padding      : .4em;
     width        : fit-content;
-    font-size    : 30px;
+    font-size    : 20px;
 }
 
 .event h3 {
     font-size  : 20px;
     font-weight: 500;
+    padding    : 0em .2em;
 }
 
 .event .author {
-    display         : flex;
-    flex-direction  : row;
-    align-items     : center;
-    color           : black;
-    border-radius   : 4px;
-    padding         : .4em .8em;
-    font-weight     : 500;
-    width           : fit-content;
-    background-color: var(--green-solana);
+    display       : flex;
+    flex-direction: row;
+    align-items   : center;
+    color         : #a3a3a3;
+    border-radius : 4px;
+    padding       : 0em .2em;
+    font-weight   : 500;
+    font-size     : 14px;
+    width         : fit-content;
+}
+
+.event .author svg {
+    color: var(--green-solana);
 }
 
 .event .dataHora {
     display         : flex;
     flex-direction  : row;
-    justify-content : center;
+    justify-content : flex-start;
     align-items     : center;
     gap             : .2em;
-    color           : black;
+    color           : #2c2c2c;
     border-radius   : 4px;
     padding         : .4em .8em;
-    font-weight     : 500;
-    width           : fit-content;
+    font-weight     : 600;
+    width           : 230px;
     background-color: var(--green-solana);
 }
 
-.event .authorDataHoraContainer {
+.event .dataHoraContainer {
     display       : flex;
-    flex-direction: row;
-    gap           : 1em;
+    flex-direction: column;
+    gap           : .3em;
+    font-size     : 14px;
+    padding       : 0 .2em;
 }
 
 .event .local {
     display       : flex;
     flex-direction: row;
     align-items   : center;
-    color         : #c4c4c4;
+    color         : #a3a3a3;
     font-weight   : 500;
+    padding       : .4em;
+    border-radius : 5px;
+    width         : fit-content;
 }
 
 .event .local svg {
     color: var(--green-solana);
 }
 
-.event .description {
-    color: #c4c4c4;
-}
+.event .description,
+.instructions {
+    color      : #a3a3a3;
+    padding    : 0 .2em;
+    line-height: 1.1;
 
-.event .instructions {
-    color: #c4c4c4;
 }
 
 .event button {
     text-transform  : uppercase;
-    margin-top      : 1em;
+    margin-top      : .4em;
     cursor          : pointer;
     padding         : 1em 2em;
     width           : 200px;
@@ -159,10 +169,10 @@
     }
 
     .event img {
-        margin: 2em 0 0 0;
+        margin: 2em 0em 1.5em 0em;
     }
 
-    .event .authorDataHoraContainer {
+    .event .dataHoraContainer {
         flex-direction: column;
         font-size     : 14px;
     }

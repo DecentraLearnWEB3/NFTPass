@@ -2,9 +2,11 @@
     margin         : 5em;
     display        : flex;
     flex-direction : row;
+    gap            : 2em;
     justify-content: center;
     align-items    : center;
     max-width      : 800px;
+    padding        : 2em;
 }
 
 .subhero {
@@ -18,9 +20,10 @@
 }
 
 .subhero h1 {
-    font-size  : 60px;
+    font-size  : 50px;
     font-weight: bold;
     color      : #ffffff;
+    width      : fit-content;
 }
 
 .subhero p {
@@ -96,6 +99,7 @@
         margin        : 10%;
         flex-direction: column;
         gap           : 2em;
+        padding       : 1em;
     }
 
     .subhero {

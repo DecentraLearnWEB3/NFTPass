@@ -47,7 +47,7 @@ function Navbar() {
 
             <div className={`${styles.logoContainer}`}>
               <a href='/'>
-                <img src={BrainLogo} alt="" />Web3Educ
+                <img src={BrainLogo} alt="" />NFTPass
               </a>
             </div>
 
