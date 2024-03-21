@@ -37,22 +37,18 @@ const Dashboard: React.FC = () => {
             console.log("fetching metadata for a Crypto Coven NFT...");
             
             const response = await alchemy.nft.getNftMetadata(
-              "0xe2a5801e941b5BAfcf5F4d705Cf2379C2286267b",
-              "1"
-            );
-
-            const img = await alchemy.nft.getNftMetadata(
-              "0xe2a5801e941b5BAfcf5F4d705Cf2379C2286267b",
+              "0x705823CbB2e5FCC88e87430fECd1A175c0065900",
               "1"
             );
 
             console.log(response);
-            console.log(img.image.cachedUrl);
-            console.log(img.image.originalUrl);
-  
-            imgNft = img.image.cachedUrl;
-            console.log(imgNft);
 
+            const metadata = await alchemy.core.getTokenMetadata(
+              "0x705823CbB2e5FCC88e87430fECd1A175c0065900"
+            );
+
+            console.log(metadata);
+            
         setLoading(false);
       } catch (error) {
         console.error("Erro ao buscar NFTs:", error);
@@ -70,12 +66,11 @@ const Dashboard: React.FC = () => {
   return (
     <div className="dashboard">
       <h2>Meus NFTs</h2>
-      
 
       <div className="nft-list">
         {nfts.map((nft, index) => (
           <div key={index} className="nft">
-            <h3>{nft.title}</h3>
+            <h3>{nft.name}</h3>
             <img src={nft.image.cachedUrl} alt="Imagem NFT" />
             <p>{nft.description}</p>
           </div>

@@ -241,7 +241,7 @@ function CreateEvent() {
 
         <input type="text" placeholder='Link' id='link' name='link' value={evento.link} onChange={handleChange} />
 
-        <Select
+        {/* <Select
           className="customSelect"
           id="tipo"
           name="tipo"
@@ -255,6 +255,7 @@ function CreateEvent() {
           placeholder="Selecione o tipo"
           styles={customStyles}
         />
+        */}
 
         <label  className='customImgUpload' htmlFor="imagem">Imagem &#187;<input type="file" placeholder='Imagem' id="imagem" name="imagem" accept="image/*" onChange={handleChange} /></label>
         
