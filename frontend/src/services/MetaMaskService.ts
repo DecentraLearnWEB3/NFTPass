@@ -3,10 +3,8 @@ const MetaMaskService = {
     connectToMetaMask: async (): Promise<string> => {
       if ((window as any).ethereum) {
         try {
-          // Solicitar acesso à carteira MetaMask
           await (window as any).ethereum.request({ method: 'eth_requestAccounts' });
   
-          // Obtendo o endereço da carteira MetaMask
           const accounts = await (window as any).ethereum.request({ method: 'eth_accounts' });
           const selectedAddress: string = accounts[0];
   

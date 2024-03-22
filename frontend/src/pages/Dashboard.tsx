@@ -3,78 +3,94 @@ import "./Dashboard.css";
 import { Alchemy, Network } from "alchemy-sdk";
 import MetaMaskService from '../services/MetaMaskService';
 
+import ABINFTPassFactory from '../assets/ABI/ABINFTPASSFactory.json';
+import ABINFTPass from '../assets/ABI/ABINFTPASS.json';
+
+import { ethers } from 'ethers';
+
 const Dashboard: React.FC = () => {
 
-  const [nfts, setNfts] = useState<any[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const NFT_PASS_FACTORY_CONTRACT_ADDRESS = "0x55aDA3c97518673B2E9db327f4E2d9D220Ec23B1";
+  const NFT_PASS_CONTRACT_ADDRESS = "0x64dd5794f7ed60d28E457Dd90fe79a886120f350";
 
-  let imgNft;
+  async function getProvider() {
+    if (!(window as any).ethereum) {
+      throw new Error("No wallet found!");
+    }
+
+    const provider = new ethers.BrowserProvider((window as any).ethereum);
+    const accounts = await provider.send('eth_requestAccounts', []);
+
+    if (!accounts || !accounts.length) {
+      throw new Error("Wallet not authorized!");
+    }
+
+    return provider;
+  }
 
   useEffect(() => {
-    
-    const fetchNFTs = async () => {
+
+    async function connectToContract() {
+      
       try {
-        const alchemy = new Alchemy({
-          apiKey: "O8e2EDz-LUqlqfWWZDG2-CKo3wdOtxBL",
-          network: Network.OPT_SEPOLIA,
-        });
+        const provider = await getProvider();
+        const contract = new ethers.Contract(NFT_PASS_FACTORY_CONTRACT_ADDRESS, ABINFTPassFactory, provider);
 
-        const address: string | null = await MetaMaskService.connectToMetaMask();
-          
-          const nftsData = await alchemy.nft.getNftsForOwner(address);
-          
-          setNfts(nftsData.ownedNfts);
+        const openEvents = await contract.getOpenEvents();
 
-          for (const nft of nftsData.ownedNfts) {
-            console.log("===");
-            console.log("contract address:", nft.contract.address);
-            console.log("token ID:", nft.tokenId);
-          }
+        console.log(openEvents);
 
-          console.log("===");
-
-          // Fetch metadata for a particular NFT:
-            console.log("fetching metadata for a Crypto Coven NFT...");
-            
-            const response = await alchemy.nft.getNftMetadata(
-              "0x705823CbB2e5FCC88e87430fECd1A175c0065900",
-              "1"
-            );
-
-            console.log(response);
-
-            const metadata = await alchemy.core.getTokenMetadata(
-              "0x705823CbB2e5FCC88e87430fECd1A175c0065900"
-            );
-
-            console.log(metadata);
-            
-        setLoading(false);
       } catch (error) {
-        console.error("Erro ao buscar NFTs:", error);
+        console.log(error);
       }
-    };
-
-    fetchNFTs();
-    
+    }
+    connectToContract();
+    connectToNFTPass();
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
+
+  async function connectToNFTPass() {
+      try {
+        const provider = await getProvider();
+        const contract = new ethers.Contract(NFT_PASS_CONTRACT_ADDRESS, ABINFTPass, provider);
+
+        const symbol = await contract.symbol();
+        const name = await contract.name();
+        console.log("Symbol: ", symbol);
+        console.log("Name: ", name);
+
+        const contractURI = await contract.contractURI();
+        console.log("Contract URI: ", contractURI);
+
+      } catch (error) {
+        console.log(error);
+      }
   }
+
+  async function createNFTPassFactory() {
+    try {
+        const provider = await getProvider();
+        const signer = await provider.getSigner();
+
+        console.log((await signer).address);
+
+        const contract = new ethers.Contract(NFT_PASS_FACTORY_CONTRACT_ADDRESS, ABINFTPassFactory, signer);
+
+        const tx = contract.createNFTPass('TESTE CREATE NFT PASS','TESTE');
+        
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
 
   return (
     <div className="dashboard">
       <h2>Meus NFTs</h2>
-
+      <button onClick={createNFTPassFactory}>Create NFT Factory</button>
       <div className="nft-list">
-        {nfts.map((nft, index) => (
-          <div key={index} className="nft">
-            <h3>{nft.name}</h3>
-            <img src={nft.image.cachedUrl} alt="Imagem NFT" />
-            <p>{nft.description}</p>
-          </div>
-        ))}
+        
       </div>
     </div>
   );
